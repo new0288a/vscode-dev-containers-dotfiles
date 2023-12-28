@@ -3,7 +3,7 @@
 ## Configuration
 Add the following to your vscode settings.json file.
 ```
-    "dotfiles.installCommand": "~/.dotfiles/install.zsh",
+    "dotfiles.installCommand": "install.zsh",
     "dotfiles.repository": "https://github.com/new0288a/vscode-dev-containers-dotfiles.git",
     "dotfiles.targetPath": "~/.dotfiles",
 ```
