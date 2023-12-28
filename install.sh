@@ -10,7 +10,13 @@ sudo apt-get install -y openvpn3
 # install the necessary packages
 sudo apt-get install -y \
   apg \
-  ntpdate
+  ntpdate \
+  watch \
+  vim \
+  unzip \
+  jq \
+  curl \
+  wget
 
 cat <<'EOF' >> ~/.bashrc
 
