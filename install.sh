@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # install OpenVPN
-sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
-DISTRO=$(lsb_release -c | awk '{print $2}')
-echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
-sudo apt-get update
-sudo apt-get install -y openvpn3
+# sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
+# DISTRO=$(lsb_release -c | awk '{print $2}')
+# echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
+# sudo apt-get update
+# sudo apt-get install -y openvpn3
 
 # install the necessary packages
 sudo apt-get install -y \
@@ -17,6 +17,8 @@ sudo apt-get install -y \
   jq \
   curl \
   wget
+
+curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/latest/download/vcluster-linux-amd64" && sudo install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
 
 cat <<'EOF' >> ~/.bashrc
 
